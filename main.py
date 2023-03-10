@@ -11,8 +11,8 @@ st.set_page_config(
 -An Interactive Dashboard
 '''
 
-x = st.number_input('Insert a number')
-y = st.number_input('Exponent')
+x = st.number_input('Insert a number', format= '%i')
+y = st.number_input('Exponent',format= '%i')
 z = x**y
 
 
