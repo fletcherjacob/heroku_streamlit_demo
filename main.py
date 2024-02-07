@@ -18,21 +18,20 @@ def check_password():
             submit_pwd = os.getenv(st.session_state["username"])
             if submit_pwd == st.session_state["password"]:
                 st.session_state["password_correct"] = True
-
             else:
                 st.session_state["password_correct"] = False
-
-        except:
+        except KeyError:
+            # KeyError occurs when session_state["username"] or session_state["password"] is not found
             st.session_state["password_correct"] = False
-            del st.session_state["password"]  # Don't store the username or password.
+
+        if "password" in st.session_state:
+            del st.session_state["password"]
+        if "username" in st.session_state:
             del st.session_state["username"]
 
-        else:
-            st.session_state["password_correct"] = False
 
-    # Return True if the username + password is validated.
-    if st.session_state.get("password_correct", False):
-        return True
+
+
 
     # Show inputs for username + password.
     login_form()
