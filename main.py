@@ -10,7 +10,6 @@ def check_password():
             st.form_submit_button("Log in", on_click=password_entered)
 
     def password_entered():
-        st.write(f"User: {os.getenv(st.session_state['username'])}")
         if st.session_state["password"] == os.getenv(st.session_state["username"]):
             st.session_state["password_correct"] = True
             del st.session_state["password"]
