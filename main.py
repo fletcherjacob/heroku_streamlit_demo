@@ -1,7 +1,6 @@
 import os
 import streamlit as st
 
-os.environ["UF_Anest"] = "GoG@t0r$"
 
 def check_password():
 
