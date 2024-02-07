@@ -22,11 +22,14 @@ def check_password():
         """Checks whether a password entered by the user is correct."""
         try:
             submit_pwd = os.getenv(st.session_state["username"])
-            if submit_pwd == st.session_state["password"]:
-                st.session_state["password_correct"] = True
-            else:
-                st.session_state["password_correct"] = False
-        except KeyError:
+            st.write(submit_pwd)
+            # if submit_pwd == st.session_state["password"]:
+            #     st.session_state["password_correct"] = True
+            # else:
+            #     st.session_state["password_correct"] = False
+        except KeyError as e:
+            print(e)
+
             # KeyError occurs when session_state["username"] or session_state["password"] is not found
             st.session_state["password_correct"] = False
 
