@@ -1,5 +1,7 @@
 import streamlit as st
 import os
+# Configure Streamlit page
+st.set_page_config(page_title="Test Simulation", layout="wide")
 
 def check_password():
     """Verify user login credentials."""
@@ -34,8 +36,6 @@ def check_password():
 if not check_password():
     st.stop()
 
-# Configure Streamlit page
-st.set_page_config(page_title="Test Simulation", layout="wide")
 
 # Main dashboard content
 st.title("Test Dashboard - An Interactive Dashboard")
