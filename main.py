@@ -1,6 +1,7 @@
-
+import os
 import streamlit as st
 
+os.environ["UF_Anest"] = "GoG@t0r$"
 
 def check_password():
 
@@ -12,7 +13,8 @@ def check_password():
             st.form_submit_button("Log in", on_click=password_entered)
 
     def password_entered():
-        if st.session_state["password"] == st.session_state["username"]:
+        st.write(f"Users: {os.getenv(st.session_state['username'])}")
+        if st.session_state["password"] == os.getenv(st.session_state["username"]):
             st.session_state["password_correct"] = True
             del st.session_state["password"]  # Don't store the password.
         else:
