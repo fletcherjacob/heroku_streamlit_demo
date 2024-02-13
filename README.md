@@ -8,3 +8,5 @@ Demonstration of Deploying Streamlit Dashboard on Heroku with password protectio
 - Username: Fletcher
 
 - Password: Jacob
+
+*Note: There will be a delay in loading as this will likely be performing a cold boot
